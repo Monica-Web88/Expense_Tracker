@@ -9,7 +9,7 @@ export function Footer() {
             <h2 className="font-display text-display-2">Built solo, end to end.</h2>
             <p className="mt-4 max-w-md text-[0.95rem] leading-relaxed text-muted">
               Design, motion, and the component system underneath it —
-              planned, built, and documented by one person.
+              planned, built, and documented by Monica Purushothaman.
             </p>
           </div>
           <div className="flex gap-3">
