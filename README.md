@@ -8,6 +8,9 @@ add-an-expense flow with ten built-in categories.
 **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · GSAP +
 ScrollTrigger · deployed on Vercel.
 
+## Live Deployed App
+https://expense-tracker-monica.vercel.app/
+
 ## Getting started
 
 ```bash
