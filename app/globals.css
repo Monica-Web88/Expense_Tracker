@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Color tokens — RGB triplets (no # prefix) so Tailwind can apply
+  alpha-value opacity modifiers via rgb(var(--x) / <alpha-value>).
+  Swapping .dark on <html> swaps every color in the UI at once.
+
+  Light mode: white base, blue as the primary interactive color,
+  pink/magenta as the secondary accent used for highlights and gradients.
+*/
+:root {
+  --color-bg: 255 255 255;
+  --color-surface: 246 248 255;
+  --color-fg: 15 17 26;
+  --color-muted: 100 106 125;
+  --color-line: 224 229 242;
+  --color-accent: 37 99 235;
+  --color-accent-fg: 255 255 255;
+  --color-magenta: 219 39 119;
+  --color-magenta-fg: 255 255 255;
+  --color-positive: 22 163 74;
+}
+
+.dark {
+  --color-bg: 9 10 16;
+  --color-surface: 19 21 32;
+  --color-fg: 246 247 252;
+  --color-muted: 158 163 184;
+  --color-line: 38 42 60;
+  --color-accent: 96 140 255;
+  --color-accent-fg: 8 10 20;
+  --color-magenta: 244 114 182;
+  --color-magenta-fg: 8 10 20;
+  --color-positive: 74 222 128;
+}
+
+* {
+  border-color: rgb(var(--color-line));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-fg));
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-feature-settings: "ss01" on, "cv01" on;
+}
+
+::selection {
+  background-color: rgb(var(--color-accent) / 0.18);
+  color: rgb(var(--color-fg));
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--color-accent));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Hairline rule used between sections instead of shadowed cards. */
+.rule {
+  border-top: 1px solid rgb(var(--color-line));
+}
+
+/* Blue → pink gradient, used once for the hero display word and CTAs. */
+.brand-gradient {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--color-accent)) 0%,
+    rgb(var(--color-magenta)) 100%
+  );
+}
+.brand-gradient-text {
+  background-image: linear-gradient(
+    100deg,
+    rgb(var(--color-accent)) 0%,
+    rgb(var(--color-magenta)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Pinned sections need an explicit height for their scroll runway. */
+.pin-runway {
+  height: 320vh;
+}
+
+@media (max-width: 767px) {
+  /* Pinning is disabled on mobile — sections stack normally. */
+  .pin-runway {
+    height: auto;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
