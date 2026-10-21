@@ -1,9 +1,6 @@
 # Expense Tracker
 
-A scroll-driven marketing page in front of a genuinely working expense
-dashboard — built as a portfolio piece. Blue and pink on a white base
-(with a dark mode toggle), a documented component library, and a real
-add-an-expense flow with ten built-in categories.
+Designed and built a scroll-driven marketing site backed by a fully working expense-tracking app (Next.js, Tailwind, GSAP ScrollTrigger), with pinned storytelling, live data entry, and category-based spend breakdowns. Architected a reusable component library on a token-based design system from interaction design to production .
 
 **Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · GSAP +
 ScrollTrigger · deployed on Vercel.
